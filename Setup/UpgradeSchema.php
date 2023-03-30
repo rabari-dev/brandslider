@@ -1,6 +1,6 @@
 <?php
 /**
- *  Copyright © Agile Codex Ltd. All rights reserved.
+ *  Copyright © Rabari Ltd. All rights reserved.
  *  License:    https://www.rabari.com/license-agreement
  *
  */

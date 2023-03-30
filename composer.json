@@ -3,7 +3,7 @@
   "description": "Magento 2 Brand Slider Extension",
   "require": {
         "php": "~8.1.0",
-        "kb/rabari-backend": "^1.2.5"
+        "rabari-dev/m2-backend": "^3.1.1"
   },
   "type": "magento2-module",
   "version": "3.1.1",
