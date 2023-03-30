@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This source file is subject to the rabari.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.rabari.com/license-agreement
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Rabari_BrandSlider::brandslider" title="Brand Slider" module="Rabari_BrandSlider" sortOrder="21" resource="Rabari_BrandSlider::brandslider" parent="Rabari_Backend::RabariBase"/>
+        <add id="Rabari_BrandSlider::brandslider_brands" title="Manage Brands" module="Rabari_BrandSlider" sortOrder="22" parent="Rabari_BrandSlider::brandslider" action="brandslider/brand" resource="Rabari_BrandSlider::brandslider_brands"/>
+    </menu>
+</config>

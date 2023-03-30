@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This source file is subject to the rabari.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.rabari.com/license-agreement
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Rabari_BrandSlider" setup_version="2.3.8">
+        <sequence>
+            <module name="Rabari_Backend"/>
+        </sequence>
+    </module>
+</config>

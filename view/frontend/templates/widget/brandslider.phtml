@@ -1,0 +1,12 @@
+<?php
+/**
+ * This source file is subject to the rabari.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.rabari.com/license-agreement
+ */
+?>
+<div class="rabari-brandslider widget-brandslider">
+    <?php
+    echo $this->getLayout()->createBlock("Rabari\BrandSlider\Block\BrandSlider")->setData($this->getData())->toHtml();
+    ?>
+</div>

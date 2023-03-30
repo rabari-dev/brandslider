@@ -1,0 +1,30 @@
+{
+  "name": "rabari-dev/brandslider",
+  "description": "Magento 2 Brand Slider Extension",
+  "require": {
+        "php": "~8.1.0",
+        "kb/rabari-backend": "^1.2.5"
+  },
+  "type": "magento2-module",
+  "version": "3.1.1",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Rabari Ltd.",
+      "email": "info@rabari.com",
+      "homepage": "https://www.rabari.com/",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Rabari\\BrandSlider\\": ""
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "Rabari_BrandSlider_brand": {
+        "column": {
+            "entity_id": true,
+            "name": true,
+            "sort_order": true,
+            "status": true,
+            "image": true,
+            "image_alt": true,
+            "store_id": true
+        },
+        "index": {
+            "Rabari_BrandSlider_BRAND_ENTITY_ID": true,
+            "Rabari_BrandSlider_BRAND_STATUS": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
