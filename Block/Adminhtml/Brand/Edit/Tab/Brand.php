@@ -50,8 +50,9 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
         \Magento\Framework\DataObjectFactory $objectFactory,
         \Rabari\BrandSlider\Model\Brand $brand,
         \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig,
-        array $data = [],
-        \Magento\Store\Model\System\Store $systemStore
+        \Magento\Store\Model\System\Store $systemStore,
+        array $data = []
+        
     ) {
         $this->_objectFactory = $objectFactory;
         $this->_brand = $brand;
