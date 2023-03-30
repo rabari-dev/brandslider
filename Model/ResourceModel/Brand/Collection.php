@@ -38,7 +38,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     /**
      * @var bool
      */
-    protected $_isLoadBrandSliderTitle = FALSE;
+    protected $_isLoadBrandSliderTitle = false;
 
     /**
      * _construct
@@ -164,18 +164,17 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     public function addFieldToFilter($field, $condition = null)
     {
-        $attributes = array(
+        $attributes = [
             'name',
             'status',
             'image_alt',
             'maintable',
-        );
+        ];
         $storeViewId = $this->getStoreViewId();
         
-        if (in_array($field, $attributes) && $storeViewId) 
-        {
+        if (in_array($field, $attributes) && $storeViewId) {
             $mainfieldCondition = $this->_translateCondition("main_table.$field", $condition);
-            $this->_select->where($mainfieldCondition, NULL, \Magento\Framework\DB\Select::TYPE_CONDITION);
+            $this->_select->where($mainfieldCondition, null, \Magento\Framework\DB\Select::TYPE_CONDITION);
             return $this;
         }
         

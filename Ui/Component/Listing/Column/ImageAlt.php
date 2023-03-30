@@ -7,7 +7,8 @@ use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Framework\UrlInterface;
 
-class ImageAlt extends Column {
+class ImageAlt extends Column
+{
     /** Url path */
 
     /** @var UrlInterface */
@@ -19,7 +20,7 @@ class ImageAlt extends Column {
     private $editUrl;
     
     /**
-     * 
+     *
      * @param ContextInterface $context
      * @param UiComponentFactory $uiComponentFactory
      * @param UrlInterface $urlBuilder
@@ -28,11 +29,11 @@ class ImageAlt extends Column {
      */
     
     public function __construct(
-    ContextInterface $context,
-    UiComponentFactory $uiComponentFactory, 
-    UrlInterface $urlBuilder, 
-    array $components = [], 
-    array $data = []
+        ContextInterface $context,
+        UiComponentFactory $uiComponentFactory,
+        UrlInterface $urlBuilder,
+        array $components = [],
+        array $data = []
     ) {
         $this->urlBuilder = $urlBuilder;
         parent::__construct($context, $uiComponentFactory, $components, $data);
@@ -45,7 +46,8 @@ class ImageAlt extends Column {
      * @param array $dataSource
      * @return array
      */
-    public function prepareDataSource(array $dataSource) {
+    public function prepareDataSource(array $dataSource)
+    {
         
         
         if (isset($dataSource['data']['items'])) {
@@ -59,6 +61,4 @@ class ImageAlt extends Column {
         
         return $dataSource;
     }
-
 }
-

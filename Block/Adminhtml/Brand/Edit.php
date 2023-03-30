@@ -15,13 +15,15 @@ namespace Rabari\BrandSlider\Block\Adminhtml\Brand;
  * @module   BrandSlider
  * @author   dev@rabari.com
  */
-class Edit extends \Magento\Backend\Block\Widget\Form\Container {
+class Edit extends \Magento\Backend\Block\Widget\Form\Container
+{
 
     /**
      * _construct
      * @return void
      */
-    protected function _construct() {
+    protected function _construct()
+    {
         $this->_objectId = 'entity_id';
         $this->_blockGroup = 'Rabari_BrandSlider';
         $this->_controller = 'adminhtml_brand';
@@ -37,26 +39,32 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container {
 
             $this->buttonList->remove('back');
             $this->buttonList->add(
-                    'close_window', [
+                'close_window',
+                [
                 'label' => __('Close Window'),
                 'onclick' => 'window.close();',
-                    ], 10
+                    ],
+                10
             );
 
             $this->buttonList->add(
-                    'save_and_continue', [
+                'save_and_continue',
+                [
                 'label' => __('Save and Continue Edit'),
                 'class' => 'save',
                 'onclick' => 'customsaveAndContinueEdit()',
-                    ], 10
+                    ],
+                10
             );
 
             $this->buttonList->add(
-                    'save_and_close', [
+                'save_and_close',
+                [
                 'label' => __('Save and Close'),
                 'class' => 'save_and_close',
                 'onclick' => 'saveAndCloseWindow()',
-                    ], 10
+                    ],
+                10
             );
 
             $this->_formScripts[] = "
@@ -86,7 +94,8 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container {
             }
         } else {
             $this->buttonList->add(
-                    'save_and_continue', [
+                'save_and_continue',
+                [
                 'label' => __('Save and Continue Edit'),
                 'class' => 'save',
                 'data_attribute' => [
@@ -94,7 +103,8 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container {
                         'button' => ['event' => 'saveAndContinueEdit', 'target' => '#edit_form'],
                     ],
                 ],
-                    ], 10
+                    ],
+                10
             );
         }
 
@@ -108,9 +118,11 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container {
      *
      * @return string
      */
-    protected function getSaveAndContinueUrl() {
+    protected function getSaveAndContinueUrl()
+    {
         return $this->getUrl(
-                        '*/*/save', [
+            '*/*/save',
+            [
                     '_current' => true,
                     'back' => 'edit',
                     'tab' => '{{tab_id}}',
@@ -126,9 +138,11 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container {
      *
      * @return string
      */
-    protected function getSaveAndCloseWindowUrl() {
+    protected function getSaveAndCloseWindowUrl()
+    {
         return $this->getUrl(
-                        '*/*/save', [
+            '*/*/save',
+            [
                     '_current' => true,
                     'back' => 'edit',
                     'tab' => '{{tab_id}}',
@@ -139,5 +153,4 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container {
                         ]
         );
     }
-
 }

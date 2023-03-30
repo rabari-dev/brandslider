@@ -8,7 +8,8 @@ use Magento\Ui\Component\Listing\Columns\Column;
 use Magento\Framework\UrlInterface;
 use Magento\Directory\Model\Config\Source\Country as SourceCountry;
 
-class Status extends Column {
+class Status extends Column
+{
     /** Url path */
 
     /** @var UrlInterface */
@@ -31,7 +32,12 @@ class Status extends Column {
      * @param string $editUrl
      */
     public function __construct(
-    ContextInterface $context, UiComponentFactory $uiComponentFactory, UrlInterface $urlBuilder, array $components = [], array $data = [], SourceCountry $sourceCountry
+        ContextInterface $context,
+        UiComponentFactory $uiComponentFactory,
+        UrlInterface $urlBuilder,
+        SourceCountry $sourceCountry,
+        array $components = [],
+        array $data = []
     ) {
         $this->urlBuilder = $urlBuilder;
         $this->sourceCountry = $sourceCountry;
@@ -57,7 +63,8 @@ class Status extends Column {
      * @param array $dataSource
      * @return array
      */
-    public function prepareDataSource(array $dataSource) {
+    public function prepareDataSource(array $dataSource)
+    {
         
         $status_arr = $this->getAvailableStatuses();
 
@@ -73,6 +80,4 @@ class Status extends Column {
         
         return $dataSource;
     }
-
 }
-

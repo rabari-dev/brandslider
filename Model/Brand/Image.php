@@ -1,5 +1,6 @@
 <?php
 namespace Rabari\BrandSlider\Model\Brand;
+
 use Magento\Framework\UrlInterface;
 use Magento\Framework\Filesystem;
 use Magento\Framework\App\Filesystem\DirectoryList;
@@ -30,8 +31,7 @@ class Image
     public function __construct(
         UrlInterface $urlBuilder,
         Filesystem $fileSystem
-    )
-    {
+    ) {
         $this->urlBuilder = $urlBuilder;
         $this->fileSystem = $fileSystem;
     }

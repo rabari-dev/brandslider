@@ -17,7 +17,8 @@ namespace Rabari\BrandSlider\Block\Adminhtml\Brand\Helper\Renderer;
  * @module   BrandSlider
  * @author   dev@rabari.com
  */
-class Image extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer {
+class Image extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
+{
 
     /**
      * Store manager.
@@ -50,11 +51,11 @@ class Image extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractR
      * @param array                                       $data
      */
     public function __construct(
-        \Magento\Backend\Block\Context $context, 
-        \Magento\Store\Model\StoreManagerInterface $storeManager, 
-        \Rabari\BrandSlider\Model\BrandFactory $brandFactory, 
-        \Rabari\BrandSlider\Model\Brand\Image $imageModel, 
-        \Magento\Framework\View\Asset\Repository $assetRepo, 
+        \Magento\Backend\Block\Context $context,
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Rabari\BrandSlider\Model\BrandFactory $brandFactory,
+        \Rabari\BrandSlider\Model\Brand\Image $imageModel,
+        \Magento\Framework\View\Asset\Repository $assetRepo,
         array $data = []
     ) {
         parent::__construct($context, $data);
@@ -71,7 +72,8 @@ class Image extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractR
      *
      * @return string
      */
-    public function render(\Magento\Framework\DataObject $row) {
+    public function render(\Magento\Framework\DataObject $row)
+    {
         $storeViewId = $this->getRequest()->getParam('store');
         $brand = $this->_brandFactory->create()->setStoreViewId($storeViewId)->load($row->getId());
         
@@ -83,5 +85,4 @@ class Image extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractR
 
         return '<image max-width="150" height="50" src ="' . $srcImage . '" alt="' . $brand->getAltText() . '" >';
     }
-
 }

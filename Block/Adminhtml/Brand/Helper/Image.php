@@ -1,5 +1,6 @@
 <?php
 namespace Rabari\BrandSlider\Block\Adminhtml\Brand\Helper;
+
 use Magento\Framework\Data\Form\Element\Image as ImageField;
 use Magento\Framework\Data\Form\Element\Factory as ElementFactory;
 use Magento\Framework\Data\Form\Element\CollectionFactory as ElementCollectionFactory;
@@ -33,10 +34,9 @@ class Image extends ImageField
         ElementCollectionFactory $factoryCollection,
         Escaper $escaper,
         UrlInterface $urlBuilder,
-        \Magento\Framework\View\Asset\Repository $assetRepo, 
+        \Magento\Framework\View\Asset\Repository $assetRepo,
         $data = []
-    )
-    {
+    ) {
         $this->imageModel = $imageModel;
         $this->_assetRepo = $assetRepo;
         parent::__construct($factoryElement, $factoryCollection, $escaper, $urlBuilder, $data);

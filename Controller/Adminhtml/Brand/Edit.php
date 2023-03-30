@@ -38,10 +38,10 @@ class Edit extends \Rabari\BrandSlider\Controller\Adminhtml\Brand
         
         if (!empty($data)) {
             $model->setData($data);
-        }else if(!$id){
+        } elseif (!$id) {
             $brand_name = $this->_getSession()->getBrandName();
             $image_alt = $this->_getSession()->getImageAlt();
-            if(isset($brand_name) && strlen($brand_name)){
+            if (isset($brand_name) && strlen($brand_name)) {
                 $data = [ 'name' => $brand_name, 'image_alt' => $image_alt ];
                 $model->setData($data);
             }

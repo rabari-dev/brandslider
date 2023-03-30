@@ -56,8 +56,9 @@ $brandCollection = $block->getBrandCollection();
                         echo "controlNav: false,";
                     }
 
-                    if (!$block->getNavButton())
+                    if (!$block->getNavButton()) {
                         echo "directionNav: false,";
+                    }
 
                     ?>
                     
@@ -103,9 +104,9 @@ $brandCollection = $block->getBrandCollection();
                              src="<?php echo $block->getBrandImageUrl($brand) ?>"/>
                             <?php if ($brand->getName() && $block->getShowCaption()) { ?>
                             <div class="flex-caption">
-                            <?php echo $brand->getName(); ?>
+                                <?php echo $brand->getName(); ?>
                             </div>
-    <?php } ?>
+        <?php } ?>
                     </li>
 
                     <?php

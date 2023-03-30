@@ -7,6 +7,7 @@
  */
 
 namespace Rabari\BrandSlider\Model;
+
 use Rabari\BrandSlider\Model\Status;
 
 /**
@@ -47,7 +48,7 @@ class BrandRepository
 
         /** @var \Rabari\BrandSlider\Model\ResourceModel\Brand\Collection $brandCollection */
         $brandCollection = $this->_brandCollectionFactory->create()
-            ->setStoreViewId($storeViewId)            
+            ->setStoreViewId($storeViewId)
             ->addFieldToFilter('status', Status::STATUS_ENABLED)
             ->addFieldToFilter('store_id', ['in' => [0,$storeViewId]])
             ->setOrder('sort_order', 'ASC');
@@ -69,14 +70,14 @@ class BrandRepository
             ->load()
             ->toArray();
 
-        $categories = array();
+        $categories = [];
         foreach ($categoriesArray as $categoryId => $category) {
             if (isset($category['name']) && isset($category['level'])) {
-                $categories[] = array(
+                $categories[] = [
                     'label' => $category['name'],
                     'level' => $category['level'],
                     'value' => $categoryId,
-                );
+                ];
             }
         }
 

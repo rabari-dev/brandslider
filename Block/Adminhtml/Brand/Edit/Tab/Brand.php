@@ -52,7 +52,6 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
         \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig,
         \Magento\Store\Model\System\Store $systemStore,
         array $data = []
-        
     ) {
         $this->_objectFactory = $objectFactory;
         $this->_brand = $brand;
@@ -78,7 +77,6 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
         );
 
         return $this;
-
     }
 
     /**
@@ -128,12 +126,15 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
         $fieldset->addType('image', '\Rabari\BrandSlider\Block\Adminhtml\Brand\Helper\Image');
         
         $image_path = null;
-        if(preg_match('~\.(png|gif|jpe?g|bmp)~i', $this->_brand->getImage()))
+        if (preg_match('~\.(png|gif|jpe?g|bmp)~i', $this->_brand->getImage())) {
               $image_path =  $this->_brand->getImage();
+        }
         
         if (!$this->_storeManager->isSingleStoreMode()) {
             $elements['store_id'] = $fieldset->addField(
-                    'store_id', 'multiselect', [
+                'store_id',
+                'multiselect',
+                [
                 'name' => 'store_id[]',
                 'label' => __('Store View'),
                 'title' => __('Store View'),
@@ -144,12 +145,14 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
                     ]
             );
             $renderer = $this->getLayout()->createBlock(
-                    'Magento\Backend\Block\Store\Switcher\Form\Renderer\Fieldset\Element'
+                'Magento\Backend\Block\Store\Switcher\Form\Renderer\Fieldset\Element'
             );
             $elements['store_id']->setRenderer($renderer);
         } else {
             $elements['store_id'] = $fieldset->addField(
-                    'store_id', 'hidden', ['name' => 'store_id[]', 'value' => $this->_storeManager->getStore(true)->getId()]
+                'store_id',
+                'hidden',
+                ['name' => 'store_id[]', 'value' => $this->_storeManager->getStore(true)->getId()]
             );
             $model->setStoreId($this->_storeManager->getStore(true)->getId());
         }

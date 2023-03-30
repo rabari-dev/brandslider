@@ -80,17 +80,17 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
             ]
         );
         $this->addColumn(
-                    'store_id',
-                    [
+            'store_id',
+            [
                         'header' => __('Store Views'),
-                        'index' => 'store_id',                        
+                        'index' => 'store_id',
                         'type' => 'store',
                         'store_all' => true,
                         'store_view' => true,
                         'renderer'=>  'Rabari\BrandSlider\Block\Adminhtml\Brand\Edit\Tab\Renderer\Store',
                         'filter_condition_callback' => [$this, '_filterStoreCondition']
                     ]
-                );
+        );
         $this->addColumn(
             'name',
             [

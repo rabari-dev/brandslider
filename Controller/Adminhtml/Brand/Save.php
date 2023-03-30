@@ -13,7 +13,6 @@ use Magento\Framework\Exception\LocalizedException as FrameworkException;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use \Magento\Framework\Controller\ResultFactory;
 
-
 /**
  * Save Brand action.
  * @category Rabari
@@ -21,28 +20,38 @@ use \Magento\Framework\Controller\ResultFactory;
  * @module   BrandSlider
  * @author   dev@rabari.com
  */
-class Save extends \Rabari\BrandSlider\Controller\Adminhtml\Brand {
+class Save extends \Rabari\BrandSlider\Controller\Adminhtml\Brand
+{
 
     protected $uploaderFactory;
     protected $imageModel;
 
     public function __construct(
-        \Magento\Backend\App\Action\Context $context, 
-        \Magento\MediaStorage\Model\File\UploaderFactory $uploaderFactory, 
-        \Rabari\BrandSlider\Model\Brand\Image $imageModel, 
-        \Rabari\BrandSlider\Model\BrandFactory $brandFactory, 
-        \Rabari\BrandSlider\Model\ResourceModel\Brand\CollectionFactory $brandCollectionFactory, 
-        \Magento\Framework\Registry $coreRegistry, 
-        \Magento\Framework\App\Response\Http\FileFactory $fileFactory, 
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory, 
-        \Magento\Framework\View\Result\LayoutFactory $resultLayoutFactory, 
-        \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory, 
-        \Magento\Store\Model\StoreManagerInterface $storeManager, 
+        \Magento\Backend\App\Action\Context $context,
+        \Magento\MediaStorage\Model\File\UploaderFactory $uploaderFactory,
+        \Rabari\BrandSlider\Model\Brand\Image $imageModel,
+        \Rabari\BrandSlider\Model\BrandFactory $brandFactory,
+        \Rabari\BrandSlider\Model\ResourceModel\Brand\CollectionFactory $brandCollectionFactory,
+        \Magento\Framework\Registry $coreRegistry,
+        \Magento\Framework\App\Response\Http\FileFactory $fileFactory,
+        \Magento\Framework\View\Result\PageFactory $resultPageFactory,
+        \Magento\Framework\View\Result\LayoutFactory $resultLayoutFactory,
+        \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory,
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
         \Magento\Backend\Helper\Js $jsHelper
     ) {
-        parent::__construct($context, $brandFactory, $brandCollectionFactory, 
-                $coreRegistry, $fileFactory, $resultPageFactory, $resultLayoutFactory, 
-                $resultForwardFactory, $storeManager, $jsHelper);
+        parent::__construct(
+            $context,
+            $brandFactory,
+            $brandCollectionFactory,
+            $coreRegistry,
+            $fileFactory,
+            $resultPageFactory,
+            $resultLayoutFactory,
+            $resultForwardFactory,
+            $storeManager,
+            $jsHelper
+        );
 
         $this->uploaderFactory = $uploaderFactory;
         $this->imageModel = $imageModel;
@@ -51,7 +60,8 @@ class Save extends \Rabari\BrandSlider\Controller\Adminhtml\Brand {
     /**
      * @var \Magento\Framework\View\Result\PageFactory
      */
-    public function execute() {
+    public function execute()
+    {
         $resultRedirect = $this->resultRedirectFactory->create();
 
         if ($data = $this->getRequest()->getPostValue()) {
@@ -62,16 +72,17 @@ class Save extends \Rabari\BrandSlider\Controller\Adminhtml\Brand {
             }
 
             $imageRequest = $this->getRequest()->getFiles('image');
-            $fileName = isset($imageRequest['name']) && strlen($imageRequest['name']) > 0 
+            $fileName = isset($imageRequest['name']) && strlen($imageRequest['name']) > 0
                             ? $imageRequest['name'] : '';
             
             $isUpload = false;
             //uploading with file name
-            if ( $fileName <> '' ) {
-                $isUpload = TRUE;
+            if ($fileName <> '') {
+                $isUpload = true;
                 if (strlen($fileName) > 90) {
-                    $this->messageManager->addErrorMessage( 
-                            __($fileName . ' was not uploaded. Filename is too long; must be 90 characters or less.'));
+                    $this->messageManager->addErrorMessage(
+                        __($fileName . ' was not uploaded. Filename is too long; must be 90 characters or less.')
+                    );
                     $fileName = '';
                 }
             }
@@ -90,7 +101,7 @@ class Save extends \Rabari\BrandSlider\Controller\Adminhtml\Brand {
                 } else {
                     $this->messageManager->addErrorMessage(__('An image for Brand is required!'));
                     $fileName = '';
-                    $isUpload = TRUE;
+                    $isUpload = true;
                 }
             }
             
@@ -99,9 +110,10 @@ class Save extends \Rabari\BrandSlider\Controller\Adminhtml\Brand {
             
             if ($isUpload) {
                 if ($fileName == '') {
-                    foreach($data as $key=>$val ){
-                        if($key == 'name')
+                    foreach ($data as $key => $val) {
+                        if ($key == 'name') {
                             $key = 'brand_name';
+                        }
                         $this->_getSession()->setData($key, $val);
                     }
                     
@@ -132,7 +144,8 @@ class Save extends \Rabari\BrandSlider\Controller\Adminhtml\Brand {
             $this->_getSession()->setFormData($data);
 
             return $resultRedirect->setPath(
-                            '*/*/edit', [static::PARAM_CRUD_ID => $this->getRequest()->getParam(static::PARAM_CRUD_ID)]
+                '*/*/edit',
+                [static::PARAM_CRUD_ID => $this->getRequest()->getParam(static::PARAM_CRUD_ID)]
             );
         }
 
@@ -140,9 +153,10 @@ class Save extends \Rabari\BrandSlider\Controller\Adminhtml\Brand {
     }
 
     /**
-     * Upload file and return file name 
+     * Upload file and return file name
      */
-    public function uploadImage($input, $destinationFolder, $data) {
+    public function uploadImage($input, $destinationFolder, $data)
+    {
         try {
             
             if (isset($data[$input]['delete'])) {
@@ -171,5 +185,4 @@ class Save extends \Rabari\BrandSlider\Controller\Adminhtml\Brand {
         }
         return '';
     }
-
 }

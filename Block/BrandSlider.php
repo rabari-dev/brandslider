@@ -7,6 +7,7 @@
  */
 
 namespace Rabari\BrandSlider\Block;
+
 use Rabari\BrandSlider\Model\Status;
 
 /**
@@ -38,11 +39,11 @@ class BrandSlider extends \Magento\Framework\View\Element\Template
     /**
      * var \Magento\Framework\View\Asset\Repository
      */
-    protected  $_assetRepo;
+    protected $_assetRepo;
     
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \Magento\Framework\View\Asset\Repository $assetRepo, 
+        \Magento\Framework\View\Asset\Repository $assetRepo,
         \Rabari\BrandSlider\Model\BrandRepository $brandRepository,
         array $data = []
     ) {

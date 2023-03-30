@@ -23,13 +23,12 @@ class UpgradeSchema implements UpgradeSchemaInterface
     protected $moduleDataSetup;
     
     /**
-     * 
+     *
      * @param ModuleDataSetupInterface $moduleDataSetup
      */
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup
-    )
-    {
+    ) {
         $this->moduleDataSetup = $moduleDataSetup;
     }
     
@@ -44,13 +43,13 @@ class UpgradeSchema implements UpgradeSchemaInterface
             $setup->getConnection()->addColumn(
                 $setup->getTable('Rabari_BrandSlider_brand'),
                 'store_id',
-                array(
+                [
                     'type'      => \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                     'nullable'  => true,
                     'length'    => '10',
                     'comment'   => 'Store ID',
                     'after'     => 'status'
-                )
+                ]
             );
 
         }

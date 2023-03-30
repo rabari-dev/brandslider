@@ -83,14 +83,14 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             ->load()
             ->toArray();
 
-        $categories = array();
+        $categories = [];
         foreach ($categoriesArray as $categoryId => $category) {
             if (isset($category['name']) && isset($category['level'])) {
-                $categories[] = array(
+                $categories[] = [
                     'label' => $category['name'],
                     'level' => $category['level'],
                     'value' => $categoryId,
-                );
+                ];
             }
         }
 

@@ -15,7 +15,7 @@ class Collection extends BrandCollection implements SearchResultInterface
      * Resource initialization
      * @return $this
      */
-   public function __construct(
+    public function __construct(
         \Magento\Framework\Data\Collection\EntityFactoryInterface $entityFactory,
         \Psr\Log\LoggerInterface $logger,
         \Magento\Framework\Data\Collection\Db\FetchStrategyInterface $fetchStrategy,

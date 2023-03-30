@@ -1,6 +1,6 @@
 <?php
 
-namespace Rabari\BrandSlider\Block\Adminhtml\Brand\Edit\Tab\Renderer; 
+namespace Rabari\BrandSlider\Block\Adminhtml\Brand\Edit\Tab\Renderer;
 
 class Store extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractRenderer
 {
@@ -87,7 +87,7 @@ class Store extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractR
         $skipAllStoresLabel = $this->_getShowAllStoresLabelFlag();
         $skipEmptyStoresLabel = $this->_getShowEmptyStoresLabelFlag();
         // $origStores =$row->getData($this->getColumn()->getIndex());
-        $origStores = explode(',',$row->getData($this->getColumn()->getIndex()));
+        $origStores = explode(',', $row->getData($this->getColumn()->getIndex()));
 
         if ($origStores === null && $row->getStoreName()) {
             $scopes = [];
@@ -138,7 +138,7 @@ class Store extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractR
         $out = '';
         $skipAllStoresLabel = $this->_getShowAllStoresLabelFlag();
         // $origStores = $row->getData($this->getColumn()->getIndex());
-        $origStores = explode(',',$row->getData($this->getColumn()->getIndex()));
+        $origStores = explode(',', $row->getData($this->getColumn()->getIndex()));
 
         if ($origStores === null && $row->getStoreName()) {
             $scopes = [];

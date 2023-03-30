@@ -10,6 +10,7 @@ namespace Rabari\BrandSlider\Model;
 
 use \Rabari\BrandSlider\Api\Data\BrandInterface;
 use \Magento\Framework\Model\AbstractModel;
+
 /**
  * Brand Model
  * @author   dev@rabari.com
@@ -123,12 +124,12 @@ class Brand extends AbstractModel implements BrandInterface
      */
     public function getStoreAttributes()
     {
-        return array(
+        return [
             'name',
             'status',
             'image_alt',
             'image',
-        );
+        ];
     }
 
     /**
@@ -200,5 +201,4 @@ class Brand extends AbstractModel implements BrandInterface
         
         return $this;
     }
-
 }
