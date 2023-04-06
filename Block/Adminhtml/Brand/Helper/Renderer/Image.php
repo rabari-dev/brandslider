@@ -77,7 +77,7 @@ class Image extends \Magento\Backend\Block\Widget\Grid\Column\Renderer\AbstractR
         $storeViewId = $this->getRequest()->getParam('store');
         $brand = $this->_brandFactory->create()->setStoreViewId($storeViewId)->load($row->getId());
         
-        if (preg_match('~\.(png|gif|jpe?g|bmp)~i', $brand->getImage())) {
+        if ($brand->getImage() && preg_match('~\.(png|gif|jpe?g|bmp)~i', $brand->getImage())) {
             $srcImage = $this->imageModel->getBaseUrl() . $brand->getImage();
         } else {
             $srcImage = $this->_assetRepo->getUrl("Rabari_BrandSlider::images/brand-logo-blank.png");

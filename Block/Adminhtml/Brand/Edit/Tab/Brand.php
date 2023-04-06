@@ -126,8 +126,10 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
         $fieldset->addType('image', '\Rabari\BrandSlider\Block\Adminhtml\Brand\Helper\Image');
         
         $image_path = null;
-        if (preg_match('~\.(png|gif|jpe?g|bmp)~i', $this->_brand->getImage())) {
-              $image_path =  $this->_brand->getImage();
+        if(!is_null($this->_brand->getImage())) {
+            if ($this->_brand->getImage() && preg_match('~\.(png|gif|jpe?g|bmp)~i', $this->_brand->getImage())) {
+                $image_path =  $this->_brand->getImage();
+            }
         }
         
         if (!$this->_storeManager->isSingleStoreMode()) {
