@@ -32,7 +32,7 @@ class BrandActions extends Column
         ContextInterface $context,
         UiComponentFactory $uiComponentFactory,
         UrlInterface $urlBuilder,
-        $editUrl = self::URL_PATH_EDIT
+        $editUrl = self::URL_PATH_EDIT,
         array $components = [],
         array $data = []
     ) {

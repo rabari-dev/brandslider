@@ -8,7 +8,8 @@ var config = {
     },
     shim: {
         'rabari/brandslider': {
-            deps: ['jquery']
+            deps: ['jquery'],
+            exports: 'jQuery.fn.flexslider'
         },
     }
 };

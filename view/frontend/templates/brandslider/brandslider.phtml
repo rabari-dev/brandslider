@@ -17,7 +17,7 @@ $brandCollection = $block->getBrandCollection();
 
     (function () {
         // store the slider in a local variable
-        require(['jquery', 'rabari/brandslider'], function ($)
+        require(['jquery', 'rabari/brandslider'], function ($,flexslider)
         {
             var $window = $(window), flexslider = {vars: {}};
             
@@ -27,7 +27,7 @@ $brandCollection = $block->getBrandCollection();
             }
 
 
-            $(document).ready(function() {
+            $(window).ready(function() {
                 var itemWidth = 210, itemMargin = <?= $block->getBrandMargin(); ?>;
                 var itemCount = getGridSize(itemWidth, itemMargin);
                 itemWidth = Math.round (jQuery('.rabari-brandslider').width()/itemCount);
