@@ -53,6 +53,12 @@ class InstallSchema implements InstallSchemaInterface
             ['nullable' => false, 'default' => ''],
             'Brand name'
         )->addColumn(
+            'brand_link',
+            \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+            255,
+            ['nullable' => true, 'default' => ''],
+            'Brand Link'
+        )->addColumn(
             'sort_order',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             10,
