@@ -41,7 +41,7 @@ $brandCollection = $block->getBrandCollection();
                     pauseOnHover: true,
                     touch: true,
                     itemWidth: itemWidth,
-                    slideshow: false,
+                    slideshow: true,
                     //thumbCaptions: true,
                     itemMargin: itemMargin, /*< ?= //$block->getBrandMargin(); ?>*/
                     minItems: itemCount, // use function to pull in initial value
@@ -101,15 +101,16 @@ $brandCollection = $block->getBrandCollection();
 
                     ?>
                     <li data-thumb="<?php echo $block->getBrandImageUrl($brand) ?>">
-                        <img alt="<?php echo $brand->getImageAlt() ?>" 
+                        <a  href="<?php echo $brand->getBrandLink(); ?>">
+                            <img alt="<?php echo $brand->getImageAlt() ?>" 
                              src="<?php echo $block->getBrandImageUrl($brand) ?>"/>
                             <?php if ($brand->getName() && $block->getShowCaption()) { ?>
-                            <div class="flex-caption">
-                                <?php echo $brand->getName(); ?>
-                            </div>
-        <?php } ?>
+                                <!--<div class="flex-caption">
+                                    <?php echo $brand->getName(); ?>
+                                </div>-->
+                            <?php } ?>
+                        </a>
                     </li>
-
                     <?php
                 }
 

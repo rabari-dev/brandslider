@@ -8,6 +8,7 @@
         <column xsi:type="smallint" name="status" nullable="false" comment="active or inactive"/>
         <column xsi:type="varchar" name="image" nullable="true" length="255" comment="Brand image"/>
         <column xsi:type="varchar" name="image_alt" nullable="true" length="255" comment="Brand image alt"/>
+        <column xsi:type="varchar" name="brand_link" nullable="true" length="255" comment="Brand Link"/>
         <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false" identity="false"
                 comment="Store ID"/>
         <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"

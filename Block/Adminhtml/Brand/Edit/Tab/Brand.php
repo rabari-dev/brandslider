@@ -123,6 +123,17 @@ class Brand extends \Magento\Backend\Block\Widget\Form\Generic implements \Magen
             ]
         );
         
+        $elements['brand_link'] = $fieldset->addField(
+            'brand_link',
+            'text',
+            [
+                'name' => 'brand_link',
+                'label' => __('Brand Link'),
+                'title' => __('Brand Link'),
+                'required' => true,
+            ]
+        );
+        
         $fieldset->addType('image', '\Rabari\BrandSlider\Block\Adminhtml\Brand\Helper\Image');
         
         $image_path = null;

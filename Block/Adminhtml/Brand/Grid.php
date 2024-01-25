@@ -100,6 +100,17 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
                 'width' => '50px',
             ]
         );
+
+        /*$this->addColumn(
+            'brand_link',
+            [
+                'header' => __('Brand Link'),
+                'index' => 'name',
+                'class' => 'xxx',
+                'width' => '50px',
+            ]
+        );*/
+        
         $this->addColumn(
             'image',
             [
