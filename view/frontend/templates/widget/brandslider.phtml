@@ -6,6 +6,9 @@
  */
 ?>
 <div class="rabari-brandslider widget-brandslider">
+    <div class="block-title">
+        <strong>TOP BRANDS</strong>
+    </div>
     <?php
     echo $block->getLayout()->createBlock("Rabari\BrandSlider\Block\BrandSlider")->setData($block->getData())->toHtml();
     ?>
